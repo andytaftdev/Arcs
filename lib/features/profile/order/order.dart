@@ -88,6 +88,36 @@ class _OrderPageState extends State<OrderPage> {
     return  Scaffold(
       body: ListView(
         children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: IconButton(
+                  icon: Icon(Ionicons.arrow_back, color: Color(0xff17171f), size: 24,), // Ikon panah
+                  onPressed: () {
+                    Navigator.pop(context); // Navigasi kembali
+                  },
+                ),
+              ),
+              Text(
+                'My Order',
+                style: GoogleFonts.poppins(
+                  fontSize: 24,
+                  fontWeight: FontWeight.w600,
+                  color: const Color(0xff17171f),
+                ),
+              ),
+              Padding(
+                padding: EdgeInsets.only(right: 28),
+                child: IconButton(
+                    onPressed: (){},
+                    icon: Icon(FeatherIcons.heart, color: Color(0xff17171f).withOpacity(0), size: 24,)
+                ),
+              )
+            ],
+          ),
+          const SizedBox(height: 16),
           SizedBox(
             height: MediaQuery.of(context).size.height,
             child: ListView.separated(
@@ -339,11 +369,11 @@ class _OrderPageState extends State<OrderPage> {
                                             mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                             children: [
                                               Text(
-                                                'Price',
+                                                'On Delivery',
                                                 style: GoogleFonts.poppins(
                                                   fontSize: 16,
                                                   fontWeight: FontWeight.w600,
-                                                  color: const Color(0xff17171f).withOpacity(0.90),
+                                                  color: const Color(0xffFFB700).withOpacity(0.90),
                                                 ),
                                               ),
                                               Text(
