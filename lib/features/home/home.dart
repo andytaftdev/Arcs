@@ -1,7 +1,10 @@
+import 'package:arcs_slicing/features/auth/pages/login_page.dart';
+import 'package:arcs_slicing/features/bloc/bloc_logout/logout_bloc.dart';
 import 'package:arcs_slicing/features/cart/sucess.dart';
 import 'package:arcs_slicing/features/profile/section/header_profile_section.dart';
 import 'package:arcs_slicing/features/profile/section/item_profile_section.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -74,11 +77,11 @@ class _HomePageState extends State<HomePage> {
                 label: '-'
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled),
+                icon: Icon(Ionicons.cart),
                 label: '-'
             ),
             BottomNavigationBarItem(
-                icon: Icon(Icons.home_filled),
+                icon: Icon(Icons.people),
                 label: '-'
             ),
           ]

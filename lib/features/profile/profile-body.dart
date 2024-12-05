@@ -35,6 +35,28 @@ class ProfileBody extends StatelessWidget {
 
               ),
               ItemProfile(title: 'Payment methods', subtitle: 'Visa **34', url: OrderPage(),),
+              BlocConsumer<LogoutBloc, LogoutState>(
+                listener: (context, state) {
+                  if (state is LogoutSuccess) {
+                    Navigator.pushReplacement(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const LoginPage()
+                        )
+                    );
+                  }
+                },
+                builder: (context, state) {
+
+                  return InkWell(
+                    onTap: () {
+                      BlocProvider.of<LogoutBloc>(context).add(LogoutButtonPressed());
+                    },
+                    child: ItemProfile(title: 'Logout', subtitle: '', url: LoginPage(),),
+                  );
+                },
+                  ),
+
 
             ],
           ),

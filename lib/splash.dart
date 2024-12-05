@@ -1,3 +1,4 @@
+import 'package:arcs_slicing/features/auth/pages/login_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:arcs_slicing/example/page/home.dart';
@@ -30,7 +31,7 @@ class _SplashPageState extends State<SplashPage>
     Navigator.of(context).pushReplacement(
       PageRouteBuilder(
         transitionDuration: Duration(milliseconds: 500), // Animation duration
-        pageBuilder: (context, animation, secondaryAnimation) => HomePage(),
+        pageBuilder: (context, animation, secondaryAnimation) => LoginPage(),
         transitionsBuilder: (context, animation, secondaryAnimation, child) {
           const begin = Offset(0.0, 1.0); // Start slide from bottom
           const end = Offset.zero; // End slide at normal position
